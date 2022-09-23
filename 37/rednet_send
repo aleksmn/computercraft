@@ -1,0 +1,6 @@
+rednet.open("top")
+
+--rednet.broadcast("I NEED HELP!")
+
+
+rednet.send(37, "I NEED HELP!")

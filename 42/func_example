@@ -1,0 +1,6 @@
+function turnBack()
+  turtle.turnLeft()
+  turtle.turnLeft()
+end
+
+turnBack()

@@ -1,0 +1,4 @@
+rednet.open("top")
+
+id, message = rednet.receive()
+print("id: ", id, " message: ", message)

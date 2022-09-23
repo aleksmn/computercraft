@@ -1,0 +1,40 @@
+os.loadAPI("sky")
+
+turtle.refuel()
+
+sky.sayHi()
+
+turtle.digDown()
+
+columnDepth = 2
+
+--MAIN LOOP
+while columnDepth < 999 do
+  
+  sky.digUntilClear()
+  turtle.forward()
+  
+  for i = 1, columnDepth do
+     turtle.digDown()
+     turtle.down()
+  end
+  
+  print("Current Depth "..columnDepth)
+
+  sky.digUntilClear()
+  turtle.forward()
+  turtle.digDown()
+  
+  for i = 1, columnDepth do
+    sky.digUpUntilClear()
+    turtle.up()
+  end
+  
+  columnDepth = columnDepth + 2
+    
+end -- END MAIN LOOP  
+
+
+
+
+

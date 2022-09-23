@@ -1,0 +1,5 @@
+print("Your name? ")
+
+name = read()
+
+print("Hello "..name)

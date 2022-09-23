@@ -1,0 +1,22 @@
+--Hello World!
+
+for x=1,5 do 
+  turtle.select(1)
+  turtle.place()
+  turtle.select(2)
+
+  for i=1,5 do 
+    turtle.place()
+  end
+
+
+  while  turtle.detect() do 
+    turtle.digUp()
+    turtle.dig()
+    turtle.up()
+  end
+
+  while not turtle.detectDown() do 
+    turtle.down()
+  end
+end --END MAIN LOOP

@@ -1,0 +1,22 @@
+turtle.refuel()
+
+for i=1,10 do
+
+  for x=1,4 do
+    turtle.digDown()
+    turtle.forward()
+    if x==1 then
+        turtle.turnLeft()
+        turtle.dig()
+        turtle.turnRight()
+    end
+    turtle.digDown()
+    turtle.forward()
+    turtle.digDown()
+    turtle.turnLeft()
+    
+  end
+
+    turtle.down()
+
+end

@@ -1,0 +1,5 @@
+array = {3, 6, 8, 10}
+
+for i = 1, 4 do
+  print(array[i])
+end

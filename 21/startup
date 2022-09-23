@@ -1,0 +1,4 @@
+--print("Hello!!!!")
+shell.run("door")
+
+--shell.run("passdoor")

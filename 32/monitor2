@@ -1,0 +1,33 @@
+monitor = peripheral.wrap("monitor_0")
+
+methods = peripheral.getMethods("right")
+
+message = "Bye bye!"
+
+monitor.setTextScale(5)
+
+
+s = table.concat(methods, "  ")
+
+print(s)
+
+
+w, h = monitor.getSize()
+
+print(w, h)
+
+monitor.clear()
+
+
+monitor.setCursorPos((w/2)-5, h/2)
+
+monitor.setBackgroundColor(colors.lime)
+
+
+monitor.clear()
+
+monitor.setTextColor(colors.orange)
+
+monitor.write(message)
+
+

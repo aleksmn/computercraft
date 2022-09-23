@@ -1,0 +1,24 @@
+ --- This script makes Towers, The W value is how width the tower is going to be and H the hight
+ --- It only supports 1 stack wood for now, But i'm going to add more functionality to it
+ 
+local W = 3
+local H = 5
+print ("Put Fuel in slot 1 and the building material in Slot 2")
+write("Please press a key to continue")
+os.pullEvent("key")
+turtle.refuel()
+turtle.select(2)
+write("Press any key to start Turtle")
+os.pullEvent("key")
+for i = 1, (H) do
+turtle.up()
+ for i = 1, 4 do
+ turtle.forward()
+ turtle.turnRight()
+  for i = 1, (W) do
+  turtle.forward()
+  turtle.placeDown()
+  end
+ end
+end
+turtle.select(1)

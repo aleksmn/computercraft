@@ -1,0 +1,3 @@
+name = io.read("Your name")
+
+print("Hello"..name)

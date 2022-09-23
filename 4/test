@@ -1,0 +1,12 @@
+num = 0
+
+if num > 0 then 
+   print("OK")
+
+elseif num == 0 then
+  print("zero")
+
+else
+  print("not OK")
+      
+end

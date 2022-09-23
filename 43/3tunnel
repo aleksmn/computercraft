@@ -1,0 +1,37 @@
+os.loadAPI("sky")
+
+local run = 0
+term.write("Tunnel length: ")
+run = read()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for i = 1, run do
+  sky.dig3()
+  turtle.turnLeft()
+  sky.dig3()
+  turtle.turnRight()
+  turtle.turnRight()
+  turtle.forward()
+  sky.dig3()
+  turtle.back()
+  turtle.turnLeft()
+end

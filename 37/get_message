@@ -1,0 +1,16 @@
+modem = peripheral.wrap("top")
+
+modem.open(1)
+
+event, modemSide, 
+senderChannel, replyChannel, 
+message, senderDistance  = os.pullEvent("modem_message")
+
+print(message)
+
+
+
+print("Message on channel: "..senderChannel)
+print("Channel to reply: "..replyChannel)
+print("Distance: "..senderDistance)
+print("Message: "..message)

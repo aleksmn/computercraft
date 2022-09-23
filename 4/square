@@ -1,0 +1,10 @@
+local function square(num)
+  print(num * num)
+end
+
+write("Input number: ")
+a = read()
+
+square(a)
+
+

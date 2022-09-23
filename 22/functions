@@ -1,0 +1,25 @@
+
+function sayHi()
+   print("Enter your name:")
+   name = io.read()  
+    print("Hello "..name.."!")
+end
+
+
+sayHi()
+
+
+function square(n)
+  return n * n
+end
+
+result = square(5) * 100 + square(4)
+
+print(result)
+
+
+
+
+
+
+

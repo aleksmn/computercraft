@@ -1,0 +1,65 @@
+--os.pullEvent = os.pullEventRaw
+
+
+function setTerminal()
+  term.clear()
+  term.setCursorPos(1,1)  
+end
+
+password = "999"
+maxTries = 3
+numFails = 0
+
+function checkPassword()
+  setTerminal()
+  
+  print("Enter the password")
+  input = read("*")
+  
+  if input == password then
+    numFails = 0
+    return true
+  else
+    numFails = numFails + 1
+    return false
+  end
+  
+end  -- END checkPassword
+
+--Start Main Loop:
+while true do
+
+setTerminal()
+
+print("To open door press: 1")
+print("To close door press: 2")
+print("Exit: 0")
+
+input = io.read()
+
+if input=="1" then
+ 
+  if checkPassword() == true then
+    rs.setOutput("back", true)
+  else
+    setTerminal()
+    print("Invalid Password")
+    if numFails < maxTries then 
+      sleep(2)
+    else
+      print("Sleeping 20 seconds...")
+      sleep(20)
+    end
+  end
+    
+elseif input=="2" then
+  rs.setOutput("back", false)
+elseif input=="0" then
+  print("Bye!")
+  break
+else
+  print("Invalid Input")
+  sleep(1)  
+end  
+
+end -- END while loop

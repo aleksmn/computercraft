@@ -1,0 +1,29 @@
+
+printer = peripheral.wrap("left")
+
+print("Paper level: "..printer.getPaperLevel())
+
+print("Ink level: "..printer.getInkLevel())
+
+if printer.getPaperLevel() < 1 then
+  print("No paper")
+  return
+end
+if printer.getInkLevel() < 1 then
+  print("No Ink")
+  return
+end
+
+printer.newPage()
+
+--username = io.read()
+
+printer.setPageTitle("My First Printed Page")
+
+printer.write("This is my first page")
+
+printer.setCursorPos(1,2)
+
+printer.write("in ComputerCraft!")
+
+printer.endPage()

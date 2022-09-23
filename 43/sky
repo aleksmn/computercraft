@@ -1,0 +1,128 @@
+--My Useful Functions
+--for Turtles
+
+function sayHi()
+  print("Hello from Sky API!")
+end
+
+
+function digUntilClear()
+    while turtle.detect() do
+        if not turtle.dig() then
+            return false
+        end
+    end
+    return true
+end
+
+
+function digUpUntilClear()
+    while turtle.detectUp() do
+        if not turtle.digUp() then
+            return false
+        end
+    end
+    return true
+end
+
+
+function dig3()
+  digUntilClear()
+  turtle.forward()
+  while turtle.detectDown() or turtle.detectUp() do
+    turtle.digUp()
+    turtle.digDown()
+  end
+end
+
+
+
+function countInventory()
+  local total = 0
+
+  for slot = 1, 16 do
+    total = total + turtle.getItemCount(slot)
+  end
+  return total
+end
+
+
+function selectAndPlaceDown()
+
+  for slot = 1, 16 do
+    if turtle.getItemCount(slot) > 0 then
+      turtle.select(slot)
+      turtle.placeDown()
+      return
+    end
+  end
+end
+
+
+
+
+function buildWall(length, height)
+  if sky.countInventory() < length * height then
+    return false  -- not enough blocks
+  end
+
+  turtle.up()
+
+  local movingForward = true
+
+  for currentHeight = 1, height do
+    for currentLength = 1, length do
+      sky.selectAndPlaceDown() -- place the block
+      if movingForward and currentLength ~= length then
+        turtle.forward()
+      elseif not movingForward and currentLength ~= length then
+        turtle.back()
+      end
+    end
+    if currentHeight ~= height then
+      turtle.up()
+    end
+    movingForward = not movingForward
+  end
+
+  -- done building wall; move to end position
+  if movingForward then
+    -- turtle is near the start position
+    for currentLength = 1, length do
+      turtle.forward()
+    end
+  else
+    -- turtle is near the end position
+    turtle.forward()
+  end
+
+  -- move down to the ground
+  for currentHeight = 1, height do
+    turtle.down()
+  end
+
+  return true
+end
+
+
+
+function buildRoom(length, width, height)
+  if sky.countInventory() < (((length - 1) * height * 2) + ((width - 1) * height * 2)) then
+    return false  -- not enough blocks
+  end
+
+  -- build the four walls
+  buildWall(length - 1, height)
+  turtle.turnRight()
+
+  buildWall(width - 1, height)
+  turtle.turnRight()
+
+  buildWall(length - 1, height)
+  turtle.turnRight()
+
+  buildWall(width - 1, height)
+  turtle.turnRight()
+
+  return true
+end

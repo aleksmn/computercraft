@@ -1,0 +1,10 @@
+turtle.back()
+turtle.back()
+
+
+while not turtle.detectDown() do 
+  turtle.place()
+  turtle.down()
+end
+
+

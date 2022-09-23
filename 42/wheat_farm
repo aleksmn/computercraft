@@ -1,0 +1,25 @@
+turtle.refuel()
+for i=1, 64 do
+
+  turtle.dig()
+  turtle.select(2)
+  turtle.place()
+  turtle.select(3)
+  turtle.place()
+  turtle.place()
+  turtle.dig()
+end
+
+function turnBack()
+  turtle.turnLeft()
+  turtle.turnLeft()
+end
+
+turnBack()
+for x=4,5 do
+
+  turtle.select(x)
+  turtle.drop()
+end
+turnBack()
+

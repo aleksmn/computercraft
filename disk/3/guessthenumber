@@ -1,0 +1,25 @@
+print("Guess the number (1-100)")
+
+number = math.random(1,100)
+
+--print("Number: "..number)
+
+while true do
+
+  guess = io.read()
+  guess = tonumber(guess)
+
+  if number == guess then
+    print("You Win!")
+    break
+  else
+
+    if guess > number then
+      print("to high")
+    else
+      print("to low")  
+    end
+  end
+
+end
+

@@ -1,0 +1,8 @@
+rednet.open("top")
+
+-- rednet.send(9, "test message")
+rednet.broadcast("Hello")
+
+
+
+

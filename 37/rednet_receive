@@ -1,0 +1,6 @@
+rednet.open("top")
+
+id, msg = rednet.receive(60)
+
+print("From ID: "..id)
+print("Message: "..msg)

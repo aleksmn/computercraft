@@ -1,0 +1,6 @@
+-- Set New Startup on Computer
+
+fs.delete("startup")
+
+fs.copy("disk/boot", "startup")
+shell.run("startup")

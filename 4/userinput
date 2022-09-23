@@ -1,0 +1,25 @@
+write("Your name: ")
+
+username = read()
+
+
+if (username == "Admin") then
+  print("Welcome, Admin!")
+else
+  print("Hello, ", username, "!")
+end
+
+
+write("Input number: ")
+num = read()
+
+num = tonumber(num)
+
+if (num > 0) then
+  print("OK")
+end
+
+
+
+
+
