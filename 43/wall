@@ -1,4 +1,10 @@
 os.loadAPI("sky")
 
+print("Inventory:")
+print(sky.countInventory())
+
+print("Fuel:")
+print(turtle.getFuelLevel())
 
 sky.buildWall(10, 5)
+
